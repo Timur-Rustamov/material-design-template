@@ -1,6 +1,9 @@
 pipeline {
     agent any
-    
+    triggers {
+        pollSCM('* * * * *')
+        githubPush()
+    }
     tools{
         nodejs "nodejs"
     }
@@ -9,7 +12,7 @@ pipeline {
         stage("Checkout"){
             steps{
                 checkout scm
-                sh 'echo check webhook'
+                sh 'echo test triggers'
             }
         }
         stage("Preparing"){
