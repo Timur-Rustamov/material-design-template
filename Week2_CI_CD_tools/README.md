@@ -89,6 +89,7 @@ Select Pull and push events as trigers.
 ------------
 
 ### Use Scripted pipeline instead of declarative
+Check out scripted.Jenkinsfile in the root directory.
 
 ### Spin up VM with installed Artifactory
 ```
