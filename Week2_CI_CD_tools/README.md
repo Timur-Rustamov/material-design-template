@@ -17,12 +17,12 @@ Edit file /etc/default/jenkins `HTTP_PORT=8081`
 
 	sudo systemctl restart jenkins
 
-#####plugins – select plugins, add GitHub and Role-based authorization strategy
+##### plugins – select plugins, add GitHub and Role-based authorization strategy
 ![](1_plugins_install.png)
-#####add new user – jenkins-NAME (your fullname, jenkins-linustorvalds)
+##### add new user – jenkins-NAME (your fullname, jenkins-linustorvalds)
 User jenkins-iharyefimenka created.
-###2. Create Agent VM
-#####Install openjdk-8-jre, Git 
+### 2. Create Agent VM
+##### Install openjdk-8-jre, Git 
 
 	sudo apt-get -y install openjdk-8-jre git 
 
