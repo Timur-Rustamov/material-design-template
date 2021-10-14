@@ -26,12 +26,12 @@ pipeline {
         }
         stage("Archiving"){
             steps{
-                sh "tar --exclude=.git --exclude=www/js --exclude=www/css -czvf result.tar.gz ."
+                sh "tar --exclude=.git --exclude=www/js --exclude=www/css -czvf /tmp/result.tar.gz ."
             }
         }
         stage("Deploy"){
             steps{
-                sh 'curl -uadmin:Password_1 -T result.tar.gz http://192.168.181.132:8082/artifactory/pipe/result_v_$BUILD_ID.tar.gz'
+                sh 'curl -uadmin:Password_1 -T /tmp/result.tar.gz http://192.168.181.132:8082/artifactory/pipe/result_v_$BUILD_ID.tar.gz'
             }
         }
   }
