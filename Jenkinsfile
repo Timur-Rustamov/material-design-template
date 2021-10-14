@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage("Checkout"){
             steps{
-                sh "rm -rf mdt"
-                sh "git clone https://github.com/AvaTTaR/mdt || echo already here "
+                checkout scm
             }
         }
         stage("Preparing"){
