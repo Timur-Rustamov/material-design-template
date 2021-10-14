@@ -12,7 +12,6 @@ pipeline {
         stage("Checkout"){
             steps{
                 checkout scm
-                sh 'echo test triggers'
             }
         }
         stage("Preparing"){
