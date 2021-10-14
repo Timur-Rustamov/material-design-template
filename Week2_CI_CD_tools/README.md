@@ -44,13 +44,13 @@ Add node using ssh-key from id_rsa
 ![](3_add_node_cred.png)
 ![](5_add_node_final.png)
 
-### 3. Configure tools – NodeJS – 1 
+### 3. Configure tools – NodeJS
 
 ##### Manage Jenkins -> Global tool configuration. Add NodeJS installations with version of NodeJS and global npm packages to install (uglify-js, clean-css-cli)
 Install NodeJS plugin and provide configuration:
 ![](6_nodejs.png)
 
-### 4. Create “Multibranch Pipeline” pipeline job (work inside Lab folder) - 3
+### 4. Create “Multibranch Pipeline” pipeline job (work inside Lab folder)
 folder name – your name in camel case (LinusTorvalds)
 Git: fork https://github.com/joashp/material-design-template repo
 Write Jenkinsfile which describes declarative pipeline
@@ -67,7 +67,7 @@ archive result
 
 **Check Jenkinsfile**
 
-### 5. Setup the GitHub webhook to trigger the jobs - 2
+### 5. Setup the GitHub webhook to trigger the jobs
 ##### Git plugin - http(s)://JENKINS_URL/git/notifyCommit?url=REPO_URL
 
 ##### Enable ‘Poll SCM’ in Job settings
