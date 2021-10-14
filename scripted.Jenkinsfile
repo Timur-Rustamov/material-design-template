@@ -1,5 +1,6 @@
 node {
     nodejs = tool 'nodejs'
+    properties([pipelineTriggers([githubPush(), pollSCM('0 0 * * *')])])
     stage('Checkout') { 
         git 'https://github.com/AvaTTaR/mdt.git'
     }
