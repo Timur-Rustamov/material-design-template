@@ -15,10 +15,10 @@ pipeline {
             steps{
                 parallel (
                     "JS preparing" : {
-                        sh 'cat mdt/www/js/* | uglifyjs -o mdt/www/min/merged-and-compressed.js --compress'
+                        sh 'cat www/js/* | uglifyjs -o www/min/merged-and-compressed.js --compress'
                     },
                     "CSS preparing" : {
-                        sh 'cat mdt/www/css/* | cleancss -o mdt/www/min/merged-and-minified.css'
+                        sh 'cat www/css/* | cleancss -o www/min/merged-and-minified.css'
                     }
                     )
                 
@@ -26,7 +26,7 @@ pipeline {
         }
         stage("Archiving"){
             steps{
-                sh "tar --exclude=mdt/.git --exclude=mdt/www/js --exclude=mdt/www/css -czvf result.tar.gz mdt/"
+                sh "tar --exclude=.git --exclude=www/js --exclude=www/css -czvf result.tar.gz ."
             }
         }
         stage("Deploy"){
