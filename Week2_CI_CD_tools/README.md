@@ -18,10 +18,9 @@ Edit file /etc/default/jenkins `HTTP_PORT=8081`
 	sudo systemctl restart jenkins
 
 #####plugins – select plugins, add GitHub and Role-based authorization strategy
-
+![](1_plugins_install.png)
 #####add new user – jenkins-NAME (your fullname, jenkins-linustorvalds)
-
-
+User jenkins-iharyefimenka created.
 ###2. Create Agent VM
 #####Install openjdk-8-jre, Git 
 
@@ -41,6 +40,9 @@ chown jenkins:jenkins /var/lib/jenkins
 ```
 #####connect agent to master node
 Add node using ssh-key from id_rsa 
+![](4_add_node_conf.png)
+![](3_add_node_cred.png)
+![](5_add_node_final.png)
 
 ###3. Configure tools – NodeJS – 1 
 
@@ -60,6 +62,8 @@ www/css -> www/min
 www/js -> www/min
 create tar archive (ignore .git, css and js folders)
 archive result
+![](7_add_mda_project.png)
+![](7_build_log.png)
 
 **Check Jenkinsfile**
 
