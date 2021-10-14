@@ -9,6 +9,7 @@ pipeline {
         stage("Checkout"){
             steps{
                 checkout scm
+                sh 'echo check webhook'
             }
         }
         stage("Preparing"){
