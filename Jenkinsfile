@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    triggers {
-        pollSCM('0 0 * * *')
-        githubPush()
-    }
+
     tools{
         nodejs "nodejs"
     }
