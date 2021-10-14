@@ -105,3 +105,4 @@ sudo systemctl enable artifactory
 ### Add new stage for publishing artifacts into Artifactory
 
 Stage deploy added, check out Jenkinsfile.
+![](10_artifacts.png)
