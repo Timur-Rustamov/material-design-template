@@ -60,6 +60,9 @@ Uglify-js
 clean-css
 www/css -> www/min
 www/js -> www/min
+### At this step I merged all css and js in one, if we want to have them compressed, but seppareted then we have to use commands:
+	ls www/js/ | xargs -I@ uglifyjs www/js/@ -o www/min/@ --compress
+	ls www/css/ | xargs -I@ cleancss www/css/@ -o www/min/@
 create tar archive (ignore .git, css and js folders)
 archive result
 ![](7_add_mda_project.png)
