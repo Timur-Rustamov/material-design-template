@@ -66,7 +66,7 @@ www/js -> www/min
 create tar archive (ignore .git, css and js folders)
 archive result
 ![](7_add_mda_project.png)
-![](7_build_log.png)
+![](8_build_log.png)
 
 **Check Jenkinsfile**
 
@@ -109,4 +109,4 @@ sudo systemctl enable artifactory
 ### Add new stage for publishing artifacts into Artifactory
 Use "Set me up" to generate link with hashed password to upload using curl
 Stage deploy added, check out Jenkinsfile.
-![](10_artifacts.png)
+![](9_artifacts.png)
