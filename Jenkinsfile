@@ -14,16 +14,17 @@ pipeline {
             }
         }
         stage("Preparing"){
-            steps{
-                parallel (
-                    "JS preparing" : {
+            parallel {
+                stage("JS preparing"){
+                    steps{
                         sh 'cat www/js/* | uglifyjs -o www/min/merged-and-compressed.js --compress'
-                    },
-                    "CSS preparing" : {
+                    }
+                }
+                stage("CSS preparing"){
+                    steps{
                         sh 'cat www/css/* | cleancss -o www/min/merged-and-minified.css'
                     }
-                    )
-                
+                }
             }
         }
         stage("Archiving"){
