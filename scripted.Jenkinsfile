@@ -1,4 +1,4 @@
-node {
+node ("Slave") {
     nodejs = tool 'nodejs'
     properties([pipelineTriggers([githubPush(), pollSCM('0 0 * * *')])])
     stage('Checkout') { 
