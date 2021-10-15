@@ -99,7 +99,7 @@ Check out scripted.Jenkinsfile in the root directory.
 wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | sudo apt-key add - 
 echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | sudo tee /etc/apt/sources.list.d/jfrog.list 
 ```
-Edit /var/lib/apt/lists/jfrog.bintray.com_artifactory-debs_dists_bionic_main_binary-amd64_Packages so only last version remains in it (some issues with repo, is the easiest way to pass it) 
+Edit /var/lib/apt/lists/jfrog.bintray.com_artifactory-debs_dists_bionic_main_binary-amd64_Packages so only last version remains in it (some issues with repo, is the easiest way to pass them) 
 ```
 sudo apt update
 sudo apt install jfrog-artifactory-oss -y
