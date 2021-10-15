@@ -4,15 +4,9 @@ node ("Slave") {
     stage('Checkout') { 
         checkout scm
     }
-    
-    stage('JS preparing') {
-      sh "cat www/js/* | ${nodejs}/bin/uglifyjs -o www/min/merged-and-compressed.js --compress"
-    }
-    
-    stage('CSS preparing') {
-      sh "cat www/css/* | ${nodejs}/bin/cleancss -o www/min/merged-and-minified.css"
-    }
-
+    def preparing = ["JS preparing" : { sh "cat www/js/* | ${nodejs}/bin/uglifyjs -o www/min/merged-and-compressed.js --compress" },
+                    "CSS preparing" : { sh "cat www/css/* | ${nodejs}/bin/cleancss -o www/min/merged-and-minified.css"}]
+    parallel preparing
     stage('Archiving') {
         sh "tar --exclude=.git --exclude=www/js --exclude=www/css -czvf /tmp/result.tar.gz ."
     }
