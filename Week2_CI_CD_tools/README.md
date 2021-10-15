@@ -107,6 +107,6 @@ sudo systemctl start artifactory
 sudo systemctl enable artifactory
 ```
 ### Add new stage for publishing artifacts into Artifactory
-
+Use "Set me up" to generate link with hashed password to upload using curl
 Stage deploy added, check out Jenkinsfile.
 ![](10_artifacts.png)
