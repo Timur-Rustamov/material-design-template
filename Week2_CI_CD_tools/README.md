@@ -75,19 +75,19 @@ archive result
 
 ##### Enable ‘Poll SCM’ in Job settings
 
-Add triggers { pollSCM('0 0 * * *') } check out Jenkinsfile.
+Add triggers `{ pollSCM('0 0 * * *') }` check out Jenkinsfile.
 
 ##### GitHub plugin - http(s)://JENKINS_URL/github-webhook/
-
-##### Enable ‘GitHub hook trigger for Git SCM polling’
-Add githubPush() to triggers, check out Jenkinsfile.
-
-##### Add githubPush() to the triggers section
 
 Create token on GitHub and add it to creds in Jenkins, next set this credentials to the GitHub plugin settings in Jenkins and enable “manage webhooks” 
 Go to GitHub repository into Settings -> Webhooks -> Add Webhook 
 Create webhook with url from advanced options of GitHub plugin (http://165.227.129.52:8081/github-webhook/) 
 Select Pull and push events as trigers. 
+
+##### Enable ‘GitHub hook trigger for Git SCM polling’
+
+Add `githubPush()` to triggers section, check out Jenkinsfile.
+
 
 ------------
 
