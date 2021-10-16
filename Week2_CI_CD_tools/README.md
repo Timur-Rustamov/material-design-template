@@ -158,3 +158,4 @@ Use "Set me up" to generate link with hashed password to upload using curl or in
 
 Mark that in the final version I'm using jfrog.io as an artifact-repo. For the begining I tried to use low-perfomance cloud VM and it worked too slow, so I had to switch to jfrog free cloud solution as it works much faster than my instance in the cloud. Anyway, the only difference in our case will be the link and credentials in JFrog plugin configuration.
 ![](12_artifacts.png)
+![](14_jfrog_cong.png)
