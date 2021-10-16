@@ -125,36 +125,17 @@ Commit message: "Update README.md"
 ./Week2_CI_CD_tools/8_add_mp_mda_config.png
 ./Week2_CI_CD_tools/3_add_node_cred.png
 ./.gitignore
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
 [Pipeline] { (Deploy)
-[Pipeline] sh
-+ curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T /tmp/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_51.tar.gz
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 4611k    0   727  100 4610k   1120  7104k --:--:-- --:--:-- --:--:-- 7094k
-100 4611k    0   727  100 4610k   1120  7104k --:--:-- --:--:-- --:--:-- 7094k
-{
-  "repo" : "default-generic-local",
-  "path" : "/result_v_51.tar.gz",
-  "created" : "2021-10-16T15:07:41.822Z",
-  "createdBy" : "avattargrey@gmail.com",
-  "downloadUri" : "https://avattar.jfrog.io/artifactory/default-generic-local/result_v_51.tar.gz",
-  "mimeType" : "application/x-gzip",
-  "size" : "4721466",
-  "checksums" : {
-    "sha1" : "9a722e7ea0ea967f81bb398779fa57145dc65245",
-    "md5" : "a27836c2535961a8b9fa4a07fafe11c1",
-    "sha256" : "490e5fc04a659e097c353279f90c79929d017946df09a1e77e6b5c87733e4efe"
-  },
-  "originalChecksums" : {
-    "sha256" : "490e5fc04a659e097c353279f90c79929d017946df09a1e77e6b5c87733e4efe"
-  },
-  "uri" : "https://avattar.jfrog.io/artifactory/default-generic-local/result_v_51.tar.gz"
-}
+[Pipeline] getArtifactoryServer
+[Pipeline] newBuildInfo
+[Pipeline] artifactoryUpload
+[consumer_0] Deploying artifact: https://avattar.jfrog.io/artifactory/default-generic-local/result_v_51.tar.gz
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] }
