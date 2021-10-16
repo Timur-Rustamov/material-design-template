@@ -30,13 +30,13 @@ pipeline {
         stage("Archiving"){
             steps{
                 sh "mkdir -p artifacts"
-                sh "tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=artifacts -czvf artifacts/result.tar.gz ."
-                archiveArtifacts artifacts: "artefacts/result.tar.gz", fingerprint: true
+                sh "tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=artifacts -czvf artifacts/result_v_$BUILD_ID.tar.gz ."
+                archiveArtifacts artifacts: "artefacts/result_v_$BUILD_ID.tar.gz", fingerprint: true
             }
         }
         stage("Deploy"){
             steps{
-                sh 'curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T artifacts/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_$BUILD_ID.tar.gz'
+                sh 'curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T artifacts/result_v_$BUILD_ID.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_$BUILD_ID.tar.gz'
             }
         }
   }
