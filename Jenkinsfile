@@ -31,7 +31,7 @@ pipeline {
             steps{
                 sh "mkdir -p artifacts"
                 sh "tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=artifacts -czvf artifacts/result.tar.gz ."
-                archiveArtifacts artifacts: "artefacts/result.tar.gz", fingerprint: true
+                archiveArtifacts artifacts: "artifacts/result.tar.gz", fingerprint: true
             }
         }
         stage("Deploy"){
@@ -42,7 +42,7 @@ pipeline {
                         """{
                             "files": [
                                 {
-                                "pattern": "artefacts/result.tar.gz",
+                                "pattern": "artifacts/result.tar.gz",
                                 "target": "default-generic-local/result_v_${BUILD_ID}.tar.gz"
                                 }
                             ]
