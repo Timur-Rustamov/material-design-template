@@ -156,5 +156,5 @@ sudo systemctl enable artifactory
 ### Add new stage for publishing artifacts into Artifactory
 Use "Set me up" to generate link with hashed password to upload using curl or install and configure JFrog Artifactory plugin for Jenkins and use it's module to connect to artifact-repo, I stoped on the second one, **[Check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "Check out Jenkinsfile")** in stage Deploy.
 
-Mark that in the final version I'm using jfrog.io as an artifact-repo. For first try I used my local envionment, but when I tried to use low-perfomance cloud VM it worked so slow, so I had to switch to jfrog free cloud solution as it works much faster than my instance in the cloud. Anyway, the only difference in our case will be the link and credentials in JFrog plugin configuration.
+Mark that in the final version I'm using jfrog.io as an artifact-repo. For the begining I tried to use low-perfomance cloud VM and it worked too slow, so I had to switch to jfrog free cloud solution as it works much faster than my instance in the cloud. Anyway, the only difference in our case will be the link and credentials in JFrog plugin configuration.
 ![](12_artifacts.png)
