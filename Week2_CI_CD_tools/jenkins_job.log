@@ -188,9 +188,6 @@ Commit message: "Update Jenkinsfile"
 ./Week2_CI_CD_tools/8_add_mp_mda_config.png
 ./Week2_CI_CD_tools/3_add_node_cred.png
 ./.gitignore
-[Pipeline] archiveArtifacts
-Archiving artifacts
-Recording fingerprints
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -201,32 +198,8 @@ Recording fingerprints
 [Pipeline] envVarsForTool
 [Pipeline] withEnv
 [Pipeline] {
-[Pipeline] sh
-+ curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T artifacts/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 27.6M    0     0  100 27.6M      0  22.8M  0:00:01  0:00:01 --:--:-- 22.8M
-100 27.6M    0   728  100 27.6M    600  22.7M  0:00:01  0:00:01 --:--:-- 22.8M
-{
-  "repo" : "default-generic-local",
-  "path" : "/result_v_59.tar.gz",
-  "created" : "2021-10-16T14:49:20.085Z",
-  "createdBy" : "avattargrey@gmail.com",
-  "downloadUri" : "https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz",
-  "mimeType" : "application/x-gzip",
-  "size" : "28994272",
-  "checksums" : {
-    "sha1" : "e5b45ee9029054d9cace5c5dfa75af2b85c58a36",
-    "md5" : "c380dfda467bc94b2b12a0ca5e423466",
-    "sha256" : "4d7f801f8785dba142d5be7a4e4797876f0fba508b13df1fddd584a1948120c9"
-  },
-  "originalChecksums" : {
-    "sha256" : "4d7f801f8785dba142d5be7a4e4797876f0fba508b13df1fddd584a1948120c9"
-  },
-  "uri" : "https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz"
-}
+[Pipeline] rtUpload
+[consumer_0] Deploying artifact: https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
