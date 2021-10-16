@@ -22,6 +22,7 @@ Edit file /etc/default/jenkins `HTTP_PORT=8081`
 ##### add new user – jenkins-NAME (your fullname, jenkins-linustorvalds)
 User jenkins-iharyefimenka created.
 
+
 ------------
 
 
@@ -48,6 +49,7 @@ Add node using ssh-key from id_rsa
 ![](3_add_node_cred.png)
 ![](5_add_node_final.png)
 
+
 ------------
 
 
@@ -56,6 +58,7 @@ Add node using ssh-key from id_rsa
 ##### Manage Jenkins -> Global tool configuration. Add NodeJS installations with version of NodeJS and global npm packages to install (uglify-js, clean-css-cli)
 Install NodeJS plugin and provide configuration:
 ![](13_folder_use.png)
+
 
 ------------
 
@@ -70,18 +73,27 @@ Uglify-js
 clean-css
 www/css -> www/min
 www/js -> www/min
+
+
 ### At this step I merged all css and js in one, if we want to have them compressed, but seppareted then we have to use commands:
 	ls www/js/ | xargs -I@ uglifyjs www/js/@ -o www/min/@ --compress
 	ls www/css/ | xargs -I@ cleancss www/css/@ -o www/min/@
+
+
 create tar archive (ignore .git, css and js folders)
 archive result
 ![](13_folder_use.png)
 ![](7_add_mda_project.png) ![](59_stage_view.png) ![](59_buid_view.png)
 
+
+
 **[Check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "Check out Jenkinsfile")**
 **[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Week2_CI_CD_tools/jenkins_job.log "Check out Job Log")**
 
+
+
 ------------
+
 
 
 ### 5. Setup the GitHub webhook to trigger the jobs
@@ -103,7 +115,11 @@ Select Pull and push events as trigers.
 Add `githubPush()` to triggers section, [check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "check out Jenkinsfile")
 
 ![](59_stage_view.png)
+
+
 ------------
+
+
 
 ### Use Scripted pipeline instead of declarative
 
@@ -111,6 +127,12 @@ Add `githubPush()` to triggers section, [check out Jenkinsfile](https://github.c
 
 **[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Week2_CI_CD_tools/jenkins_job_scripted.log "Check out Job Log")**
 ![](11_stage_view_scripted.png)
+
+
+
+------------
+
+
 
 ### Spin up VM with installed Artifactory
 ```
@@ -124,6 +146,13 @@ sudo apt install jfrog-artifactory-oss -y
 sudo systemctl start artifactory
 sudo systemctl enable artifactory
 ```
+
+
+
+------------
+
+
+
 ### Add new stage for publishing artifacts into Artifactory
 Use "Set me up" to generate link with hashed password to upload using curl
 
