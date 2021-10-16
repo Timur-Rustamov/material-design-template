@@ -57,7 +57,7 @@ Add node using ssh-key from id_rsa
 
 ##### Manage Jenkins -> Global tool configuration. Add NodeJS installations with version of NodeJS and global npm packages to install (uglify-js, clean-css-cli)
 Install NodeJS plugin and provide configuration:
-![](13_folder_use.png)
+![](6_nodejs.png)
 
 
 ------------
