@@ -21,6 +21,10 @@ Edit file /etc/default/jenkins `HTTP_PORT=8081`
 ![](1_plugins_install.png)
 ##### add new user – jenkins-NAME (your fullname, jenkins-linustorvalds)
 User jenkins-iharyefimenka created.
+
+------------
+
+
 ### 2. Create Agent VM
 ##### Install openjdk-8-jre, Git 
 
@@ -44,17 +48,21 @@ Add node using ssh-key from id_rsa
 ![](3_add_node_cred.png)
 ![](5_add_node_final.png)
 
+------------
+
+
 ### 3. Configure tools – NodeJS
 
 ##### Manage Jenkins -> Global tool configuration. Add NodeJS installations with version of NodeJS and global npm packages to install (uglify-js, clean-css-cli)
 Install NodeJS plugin and provide configuration:
-![](6_nodejs.png)
+![](13_folder_use.png)
+
+------------
+
 
 ### 4. Create “Multibranch Pipeline” pipeline job (work inside Lab folder)
 
-folder name – your name in camel case (LinusTorvalds)
 
-Git: fork https://github.com/joashp/material-design-template repo
 Write Jenkinsfile which describes declarative pipeline
 define NPM tools in pipeline section
 Run in parallel stages for compressing JS, CSS files by using next utils:
@@ -67,17 +75,22 @@ www/js -> www/min
 	ls www/css/ | xargs -I@ cleancss www/css/@ -o www/min/@
 create tar archive (ignore .git, css and js folders)
 archive result
+![](13_folder_use.png)
 ![](7_add_mda_project.png)
 ![](8_build_log.png)
 
-**Check Jenkinsfile**
+**[Check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "Check out Jenkinsfile")**
+**[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "Check out Jenkinsfile")**
+
+------------
+
 
 ### 5. Setup the GitHub webhook to trigger the jobs
 ##### Git plugin - http(s)://JENKINS_URL/git/notifyCommit?url=REPO_URL
 
 ##### Enable ‘Poll SCM’ in Job settings
 
-Add triggers `{ pollSCM('0 0 * * *') }` check out Jenkinsfile.
+Add triggers `{ pollSCM('0 0 * * *') }` [check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "check out Jenkinsfile")
 
 ##### GitHub plugin - http(s)://JENKINS_URL/github-webhook/
 
@@ -88,13 +101,13 @@ Select Pull and push events as trigers.
 
 ##### Enable ‘GitHub hook trigger for Git SCM polling’
 
-Add `githubPush()` to triggers section, check out Jenkinsfile.
+Add `githubPush()` to triggers section, [check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "check out Jenkinsfile")
 
 
 ------------
 
 ### Use Scripted pipeline instead of declarative
-Check out scripted.Jenkinsfile in the root directory.
+**[Check out scripted.Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/scripted.Jenkinsfile "Check out scripted.Jenkinsfile")**
 Checkout log.
 ![](11_stage_view_scripted.png)
 
