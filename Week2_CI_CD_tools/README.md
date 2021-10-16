@@ -76,11 +76,10 @@ www/js -> www/min
 create tar archive (ignore .git, css and js folders)
 archive result
 ![](13_folder_use.png)
-![](7_add_mda_project.png)
-![](8_build_log.png)
+![](7_add_mda_project.png) ![](59_stage_view.png) ![](59_buid_view.png)
 
 **[Check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "Check out Jenkinsfile")**
-**[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "Check out Jenkinsfile")**
+**[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Week2_CI_CD_tools/jenkins_job.log "Check out Job Log")**
 
 ------------
 
@@ -103,12 +102,12 @@ Select Pull and push events as trigers.
 
 Add `githubPush()` to triggers section, [check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "check out Jenkinsfile")
 
-
+![](59_stage_view.png)
 ------------
 
 ### Use Scripted pipeline instead of declarative
 **[Check out scripted.Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/scripted.Jenkinsfile "Check out scripted.Jenkinsfile")**
-Checkout log.
+**[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Week2_CI_CD_tools/jenkins_job_scripted.log "Check out Job Log")**
 ![](11_stage_view_scripted.png)
 
 ### Spin up VM with installed Artifactory
