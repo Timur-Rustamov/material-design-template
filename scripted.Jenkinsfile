@@ -13,6 +13,15 @@ node ("Slave") {
         archiveArtifacts artifacts: "artefacts/result.tar.gz", fingerprint: true
     }
     stage('Deploy') {
-        sh 'curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T artifacts/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_$BUILD_ID.tar.gz'
+        def artserver = Artifactory.server 'jfrog'
+        def uploadSpec = """{
+                "files": [
+                    {
+                    "pattern": "artifacts/result.tar.gz",
+                    "target": "default-generic-local/result_v_${BUILD_ID}.tar.gz"
+                    }
+                ]
+            }"""
+        artserver.upload spec: uploadSpec, failNoOp: true
     }
 }
