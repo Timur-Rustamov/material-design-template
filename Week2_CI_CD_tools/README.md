@@ -106,7 +106,9 @@ Add `githubPush()` to triggers section, [check out Jenkinsfile](https://github.c
 ------------
 
 ### Use Scripted pipeline instead of declarative
+
 **[Check out scripted.Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/scripted.Jenkinsfile "Check out scripted.Jenkinsfile")**
+
 **[Check out Job Log](https://github.com/AvaTTaR/mdt/edit/master/Week2_CI_CD_tools/jenkins_job_scripted.log "Check out Job Log")**
 ![](11_stage_view_scripted.png)
 
