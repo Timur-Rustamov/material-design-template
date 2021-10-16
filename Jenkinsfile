@@ -34,7 +34,7 @@ pipeline {
         }
         stage("Deploy"){
             steps{
-                sh 'curl -uadmin:AP25mzHHBm3xKbxF2qDVSTCnfuy -T /tmp/result.tar.gz http://165.232.70.142:8082/artifactory/pipe/result_v_$BUILD_ID.tar.gz'
+                sh 'curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T /tmp/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_$BUILD_ID.tar.gz'
             }
         }
   }
