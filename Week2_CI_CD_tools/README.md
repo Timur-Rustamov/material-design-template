@@ -93,6 +93,8 @@ Add `githubPush()` to triggers section, check out Jenkinsfile.
 
 ### Use Scripted pipeline instead of declarative
 Check out scripted.Jenkinsfile in the root directory.
+Checkout log.
+![](11_stage_view_scripted.png)
 
 ### Spin up VM with installed Artifactory
 ```
@@ -108,5 +110,6 @@ sudo systemctl enable artifactory
 ```
 ### Add new stage for publishing artifacts into Artifactory
 Use "Set me up" to generate link with hashed password to upload using curl
-Stage deploy added, check out Jenkinsfile.
+
+Stage deploy added, check out Jenkinsfile. Mark that in the final version I'm using jfrog.io as an artifact-repo. For first try I used my local envionment, but when I tried to use low-perfomance cloud VM it worked so slow, so I had to switch to jfrog free cloud solution as it works much faster than my instance in the cloud. Anyway, the only difference in our case will be the link we are using to upload artifacts.
 ![](9_artifacts.png)
