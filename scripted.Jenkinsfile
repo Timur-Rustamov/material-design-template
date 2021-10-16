@@ -10,7 +10,7 @@ node ("Slave") {
     stage('Archiving') {
         sh "mkdir -p artifacts"
         sh "tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=artifacts -czvf artifacts/result.tar.gz ."
-        archiveArtifacts artifacts: "artefacts/result.tar.gz", fingerprint: true
+        archiveArtifacts artifacts: "artifacts/result.tar.gz", fingerprint: true
     }
     stage('Deploy') {
         def artserver = Artifactory.server 'jfrog'
