@@ -1,0 +1,241 @@
+Push event to branch master
+14:45:30 Connecting to https://api.github.com with no credentials, anonymous access
+Obtained Jenkinsfile from 52cb73a3f04e8fab42ce72e2d55232b825a588a8
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/IharYefimenka_mda_master
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/IharYefimenka_mda_master/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AvaTTaR/mdt.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AvaTTaR/mdt.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+ > git fetch --no-tags --force --progress -- https://github.com/AvaTTaR/mdt.git +refs/heads/master:refs/remotes/origin/master # timeout=10
+Checking out Revision 52cb73a3f04e8fab42ce72e2d55232b825a588a8 (master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 52cb73a3f04e8fab42ce72e2d55232b825a588a8 # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk 7ff3d1f845c46020373d9eea93eb62cbb7534bdf # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+The recommended git tool is: git
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/IharYefimenka_mda_master/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AvaTTaR/mdt.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AvaTTaR/mdt.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+ > git fetch --no-tags --force --progress -- https://github.com/AvaTTaR/mdt.git +refs/heads/master:refs/remotes/origin/master # timeout=10
+Checking out Revision 52cb73a3f04e8fab42ce72e2d55232b825a588a8 (master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 52cb73a3f04e8fab42ce72e2d55232b825a588a8 # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Preparing)
+[Pipeline] parallel
+[Pipeline] { (Branch: JS preparing)
+[Pipeline] { (Branch: CSS preparing)
+[Pipeline] stage
+[Pipeline] { (JS preparing)
+[Pipeline] stage
+[Pipeline] { (CSS preparing)
+[Pipeline] tool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
++ cat www/js/init.js www/js/jquery-2.1.1.min.js www/js/materialize.js www/js/materialize.min.js www/js/modernizr.js
++ uglifyjs -o www/min/merged-and-compressed.js --compress
++ cat www/css/font-awesome.min.css www/css/materialize.css www/css/materialize.min.css www/css/style.css
++ cleancss -o www/min/merged-and-minified.css
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archiving)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mkdir -p artifacts
+[Pipeline] sh
++ tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=artifacts -czvf artifacts/result.tar.gz .
+./
+./www/
+./www/contact.php
+./www/font/
+./www/font/material-design-icons/
+./www/font/material-design-icons/Material-Design-Icons.woff2
+./www/font/material-design-icons/LICENSE.txt
+./www/font/material-design-icons/Material-Design-Icons.woff
+./www/font/material-design-icons/Material-Design-Icons.eot
+./www/font/material-design-icons/Material-Design-Icons.svg
+./www/font/material-design-icons/Material-Design-Icons.ttf
+./www/font/roboto/
+./www/font/roboto/Roboto-Bold.woff
+./www/font/roboto/Roboto-Light.ttf
+./www/font/roboto/Roboto-Bold.woff2
+./www/font/roboto/Roboto-Thin.woff
+./www/font/roboto/Roboto-Regular.woff
+./www/font/roboto/Roboto-Light.woff2
+./www/font/roboto/Roboto-Regular.woff2
+./www/font/roboto/Roboto-Thin.ttf
+./www/font/roboto/Roboto-Light.woff
+./www/font/roboto/Roboto-Medium.ttf
+./www/font/roboto/Roboto-Medium.woff
+./www/font/roboto/Roboto-Medium.woff2
+./www/font/roboto/Roboto-Thin.woff2
+./www/font/roboto/Roboto-Regular.ttf
+./www/font/roboto/Roboto-Bold.ttf
+./www/min/
+./www/min/modernizr.js
+./www/min/merged-and-compressed.js
+./www/min/merged-and-minified.css
+./www/min/custom-min.js
+./www/min/custom-min.css
+./www/min/plugin-min.js
+./www/min/plugin-min.css
+./www/min/materialize.js
+./www/min/init.js
+./www/min/materialize.min.js
+./www/min/jquery-2.1.1.min.js
+./www/fonts/
+./www/fonts/fontawesome-webfont.ttf
+./www/fonts/fontawesome-webfont.svg
+./www/fonts/fontawesome-webfont.woff
+./www/fonts/FontAwesome.otf
+./www/fonts/fontawesome-webfont.eot
+./www/favicon.ico
+./www/index.html
+./www/img/
+./www/img/project2.jpeg
+./www/img/parallax1.png
+./www/img/project4.jpg
+./www/img/project5.png
+./www/img/avatar3.png
+./www/img/project6.jpeg
+./www/img/avatar1.png
+./www/img/avatar4.png
+./www/img/project1.jpg
+./www/img/avatar2.png
+./www/img/project3.png
+./.gitattributes
+./scripted.Jenkinsfile
+./artefacts/
+./artefacts/result_v_45.tar.gz
+./artefacts/result.tar.gz
+./result.tar.gz
+./README.md
+./Jenkinsfile
+./Week2_CI_CD_tools/
+./Week2_CI_CD_tools/1_plugins_install.png
+./Week2_CI_CD_tools/9_artifacts.png
+./Week2_CI_CD_tools/5_add_node_final.png
+./Week2_CI_CD_tools/4_add_node_conf.png
+./Week2_CI_CD_tools/7_add_mda_project.png
+./Week2_CI_CD_tools/2_node_add_1.png
+./Week2_CI_CD_tools/8_build_log.png
+./Week2_CI_CD_tools/9_project_in_folder.png
+./Week2_CI_CD_tools/6_nodejs.png
+./Week2_CI_CD_tools/7_test_webhook.png
+./Week2_CI_CD_tools/README.md
+./Week2_CI_CD_tools/8_add_mp_mda_config.png
+./Week2_CI_CD_tools/3_add_node_cred.png
+./.gitignore
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T artifacts/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 27.6M    0     0  100 27.6M      0  22.8M  0:00:01  0:00:01 --:--:-- 22.8M
+100 27.6M    0   728  100 27.6M    600  22.7M  0:00:01  0:00:01 --:--:-- 22.8M
+{
+  "repo" : "default-generic-local",
+  "path" : "/result_v_59.tar.gz",
+  "created" : "2021-10-16T14:49:20.085Z",
+  "createdBy" : "avattargrey@gmail.com",
+  "downloadUri" : "https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz",
+  "mimeType" : "application/x-gzip",
+  "size" : "28994272",
+  "checksums" : {
+    "sha1" : "e5b45ee9029054d9cace5c5dfa75af2b85c58a36",
+    "md5" : "c380dfda467bc94b2b12a0ca5e423466",
+    "sha256" : "4d7f801f8785dba142d5be7a4e4797876f0fba508b13df1fddd584a1948120c9"
+  },
+  "originalChecksums" : {
+    "sha256" : "4d7f801f8785dba142d5be7a4e4797876f0fba508b13df1fddd584a1948120c9"
+  },
+  "uri" : "https://avattar.jfrog.io/artifactory/default-generic-local/result_v_59.tar.gz"
+}
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
