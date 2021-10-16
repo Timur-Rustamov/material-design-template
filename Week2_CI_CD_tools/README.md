@@ -51,7 +51,9 @@ Install NodeJS plugin and provide configuration:
 ![](6_nodejs.png)
 
 ### 4. Create “Multibranch Pipeline” pipeline job (work inside Lab folder)
+
 folder name – your name in camel case (LinusTorvalds)
+
 Git: fork https://github.com/joashp/material-design-template repo
 Write Jenkinsfile which describes declarative pipeline
 define NPM tools in pipeline section
