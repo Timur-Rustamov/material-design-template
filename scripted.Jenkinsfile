@@ -8,9 +8,11 @@ node ("Slave") {
                     "CSS preparing" : {stage("CSS preparing") { sh "cat www/css/* | ${nodejs}/bin/cleancss -o www/min/merged-and-minified.css"}}]
     parallel preparing
     stage('Archiving') {
-        sh "tar --exclude=.git --exclude=www/js --exclude=www/css -czvf /tmp/result.tar.gz ."
+        sh "mkdir -p artifacts"
+        sh "tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=artifacts -czvf artifacts/result.tar.gz ."
+        archiveArtifacts artifacts: "artefacts/result.tar.gz", fingerprint: true
     }
     stage('Deploy') {
-        sh 'curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T /tmp/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_$BUILD_ID.tar.gz'
+        sh 'curl -uavattargrey@gmail.com:AP6NqZhP6c5heJFN2okV4fyR3KR -T artifacts/result.tar.gz https://avattar.jfrog.io/artifactory/default-generic-local/result_v_$BUILD_ID.tar.gz'
     }
 }
