@@ -114,7 +114,7 @@ Select Pull and push events as trigers.
 
 Add `githubPush()` to triggers section, [check out Jenkinsfile](https://github.com/AvaTTaR/mdt/edit/master/Jenkinsfile "check out Jenkinsfile")
 
-![](59_stage_view.png)
+![](59_buid_view.png)
 
 
 ------------
