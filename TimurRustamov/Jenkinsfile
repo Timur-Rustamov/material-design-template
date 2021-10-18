@@ -26,5 +26,13 @@ pipeline {
 		archiveArtifacts artifacts: 'Week2_CI_CD_tools/result.tar.gz', fingerprint: true
 		}
 	}
+	stage('pushing to artifactory'){
+	    steps{
+	        withCredentials([usernamePassword(credentialsId: 'artifactory_jfrog', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+				sh "curl -u${USERNAME}:${PASSWORD} -T result.tar.gz \"http://159.223.17.1:8082/artifactory/material-design-template/$build{env.BUILD_NUMBER}.tar.gz\""
+	    	}
+		}
+	}
+	}
 }
-}
+
