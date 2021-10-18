@@ -86,3 +86,6 @@ To install artifactory to VM we can use following commands:
 ![image](https://user-images.githubusercontent.com/84975945/137643549-5a893e3a-b453-4ba0-b60a-eb231eb940c0.png)
 ## Pushing build to artifactory
 Stage of pushing to artifactory is placed in main jenkinsfile - https://github.com/Timur-Rustamov/material-design-template/blob/main/TimurRustamov/Jenkinsfile
+### Results of full pipeline
+![image](https://user-images.githubusercontent.com/84975945/137733080-069cbe7c-6c2f-4275-9804-bd0c1344374d.png)
+![image](https://user-images.githubusercontent.com/84975945/137733199-c1d4c9db-79de-4a64-9b24-b58977b21bd0.png)
