@@ -74,3 +74,15 @@ To have controll of changes in repo i setup "Scan repository triggers" for scann
 To configure GitHub hook we go to repo settings -> Webhooks-> Add webhook: 
 <img width="943" alt="web hook" src="https://user-images.githubusercontent.com/84975945/137627869-5aa16228-6e59-45ae-9aee-b3b25148faab.png">
 <img width="1517" alt="web hook1" src="https://user-images.githubusercontent.com/84975945/137627872-4aca7ed2-d319-40fe-965c-acd4d4474d9e.png">
+## Spin up VM with installed Artifactory
+To install artifactory to VM we can use following commands:
+ ````sh
+ $ wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | sudo apt-key add -
+ $ echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | sudo tee /etc/apt/sources.list.d/jfrog.list
+ $ sudo apt update
+ $ sudo apt install jfrog-artifactory-oss
+ $ sudo systemctl start artifactory.service
+````
+![image](https://user-images.githubusercontent.com/84975945/137643549-5a893e3a-b453-4ba0-b60a-eb231eb940c0.png)
+
+
