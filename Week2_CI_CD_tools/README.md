@@ -84,5 +84,5 @@ To install artifactory to VM we can use following commands:
  $ sudo systemctl start artifactory.service
 ````
 ![image](https://user-images.githubusercontent.com/84975945/137643549-5a893e3a-b453-4ba0-b60a-eb231eb940c0.png)
-
-
+## Pushing build to artifactory
+Stage of pushing to artifactory is placed in main jenkinsfile - https://github.com/Timur-Rustamov/material-design-template/blob/main/TimurRustamov/Jenkinsfile
