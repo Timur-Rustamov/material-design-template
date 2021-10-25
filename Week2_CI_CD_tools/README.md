@@ -89,3 +89,5 @@ Stage of pushing to artifactory is placed in main jenkinsfile - https://github.c
 ### Results of full pipeline
 ![image](https://user-images.githubusercontent.com/84975945/137733080-069cbe7c-6c2f-4275-9804-bd0c1344374d.png)
 ![image](https://user-images.githubusercontent.com/84975945/137733199-c1d4c9db-79de-4a64-9b24-b58977b21bd0.png)
+## Use Scripted pipeline instead of declarative
+Link to scripted pipeline - https://github.com/Timur-Rustamov/material-design-template/blob/main/Scripted%20Jenkinsfile
